@@ -8,6 +8,7 @@ manager close: user.file_manager_hide_pickers()
 manager refresh: user.file_manager_update_lists()
 go <user.system_path>: user.file_manager_open_directory(system_path)
 (go parent | daddy): user.file_manager_open_parent()
+
 ^folder open numb <number_small>$:
     directory = user.file_manager_get_directory_by_index(number_small - 1)
     user.file_manager_open_directory(directory)

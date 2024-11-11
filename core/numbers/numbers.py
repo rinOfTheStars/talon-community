@@ -177,7 +177,7 @@ for ten in tens:
 number_small_map = {n: i for i, n in enumerate(number_small_list)}
 
 mod.list("number_small", desc="List of small numbers")
-mod.tag("prefixed_numbers", desc="Require prefix when saying a number")
+mod.tag("unprefixed_numbers", desc="Dont require prefix when saying a number")
 ctx.lists["self.number_small"] = number_small_map.keys()
 
 
@@ -197,6 +197,12 @@ def digits(m) -> int:
 def number_string(m) -> str:
     """Parses a number phrase, returning that number as a string."""
     return parse_number(list(m))
+
+
+@mod.capture(rule="<user.number_string> ((point | dot) <user.number_string>)+")
+def number_decimal_string(m) -> str:
+    """Parses a decimal number phrase, returning that number as a string."""
+    return ".".join(m.number_string_list)
 
 
 @ctx.capture("number", rule="<user.number_string>")
