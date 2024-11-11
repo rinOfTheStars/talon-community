@@ -42,3 +42,4 @@ quote that:
 (grave | back tick) that:
     text = edit.selected_text()
     user.paste("`{text}`")
+(em dash | long dash | emmy): "—"
