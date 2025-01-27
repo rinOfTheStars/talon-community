@@ -9,10 +9,10 @@ manager refresh: user.file_manager_update_lists()
 go <user.system_path>: user.file_manager_open_directory(system_path)
 (go parent | daddy): user.file_manager_open_parent()
 
-^folder open numb <number_small>$:
-    directory = user.file_manager_get_directory_by_index(number_small - 1)
-    user.file_manager_open_directory(directory)
-^folder open {user.file_manager_directories}$:
+#^folder open numb <number_small>$:
+#    directory = user.file_manager_get_directory_by_index(number_small - 1)
+#    user.file_manager_open_directory(directory)
+^folder enter {user.file_manager_directories}$:
     user.file_manager_open_directory(file_manager_directories)
 ^folder (select | cell) {user.file_manager_directories}$:
     user.file_manager_select_directory(file_manager_directories)
@@ -22,7 +22,8 @@ go <user.system_path>: user.file_manager_open_directory(system_path)
 ^folder (select | cell) numb <number_small>$:
     file = user.file_manager_get_file_by_index(number_small - 1)
     user.file_manager_select_file(file)
-^file open {user.file_manager_files}$: user.file_manager_open_file(file_manager_files)
+^file default {user.file_manager_files}$:
+     user.file_manager_open_file(file_manager_files)
 ^file (select | cell) {user.file_manager_files}$:
     user.file_manager_select_file(file_manager_files)
 
