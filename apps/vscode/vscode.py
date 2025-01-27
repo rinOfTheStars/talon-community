@@ -5,11 +5,14 @@ is_mac = app.platform == "mac"
 ctx = Context()
 mac_ctx = Context()
 mod = Module()
+# com.todesktop.230313mzl4w4u92 is for Cursor - https://www.cursor.com/
 mod.apps.vscode = """
 os: mac
 and app.bundle: com.microsoft.VSCode
 os: mac
 and app.bundle: com.microsoft.VSCodeInsiders
+os: mac
+and app.bundle: com.vscodium
 os: mac
 and app.bundle: com.visualstudio.code.oss
 os: mac
@@ -48,6 +51,8 @@ os: windows
 and app.name: Azure Data Studio
 os: windows
 and app.exe: /^azuredatastudio\.exe$/i
+os: windows
+and app.exe: positron.exe
 """
 
 ctx.matches = r"""
@@ -102,6 +107,9 @@ class EditActions:
 
     def save_all():
         actions.user.vscode("workbench.action.files.saveAll")
+
+    def save():
+        actions.user.vscode("workbench.action.files.save")
 
     def find_next():
         actions.user.vscode("editor.action.nextMatchFindAction")

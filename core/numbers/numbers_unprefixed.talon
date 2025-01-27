@@ -1,5 +1,5 @@
 tag: user.unprefixed_numbers
+and not tag: user.continuous_scrolling
 -
 
-<user.number_string>: "{number_string}"
-<user.number_decimal_string>: "{number_decimal_string}"
+<user.number_prose_unprefixed>: "{number_prose_unprefixed}"
