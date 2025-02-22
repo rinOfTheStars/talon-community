@@ -18,7 +18,12 @@ mod.list("code_operators_assignment", desc="List of code operators for assignmen
 mod.list("code_operators_bitwise", desc="List of code operators for bitwise operations")
 mod.list("code_operators_lambda", desc="List of code operators for anonymous functions")
 mod.list(
-    "code_operators_math", desc="List of code operators for mathematical operations"
+    "code_operators_math",
+    desc="List of code operators for mathematical operations",
+)
+mod.list(
+    "code_operators_math_comparison",
+    desc="List of code operators for mathematical comparison operations",
 )
 mod.list("code_operators_pointer", desc="List of code operators for pointers")
 
@@ -61,6 +66,7 @@ class Operators(TypedDict, total=False):
     MATH_ADD: Operator
     MATH_MULTIPLY: Operator
     MATH_DIVIDE: Operator
+    MATH_FLOOR_DIVIDE: Operator
     MATH_MODULO: Operator
     MATH_EXPONENT: Operator
     MATH_EQUAL: Operator
