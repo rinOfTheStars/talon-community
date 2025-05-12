@@ -28,7 +28,7 @@ manager refresh: user.file_manager_update_lists()
     user.file_manager_select_file(file_manager_files)
 
 #new folder
-folder new <user.text>: user.file_manager_new_folder(text)
+folder new [<user.text>]: user.file_manager_new_folder(text or "")
 
 #show properties
 properties show: user.file_manager_show_properties()

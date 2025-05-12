@@ -115,12 +115,16 @@ settings():
 # Enabling this tag disables other pop to click actions in command mode, including pop to click
 # tag(): user.pop_twice_to_repeat
 
-# Uncomment the below to disable support for saying numbers without a prefix.
-# By default saying "one" would write "1", however many users find this behavior
-# prone to false positives. If you uncomment this, you will need to say
-# "numb one" to write "1". Note that this tag will eventually be activated by default
-# tag(): user.prefixed_numbers
+# Uncomment the below to enable support for saying numbers without a prefix.
+# By default you need to say "numb one" to write "1". If you uncomment this,
+# you can say "one" to write "1".
+# tag(): user.unprefixed_numbers
+
+# Uncomment the below to enable the experimental window layout commands
+# defined in window_layout.talon
+# tag(): user.experimental_window_layout
 
 # Tags related to other plugins/features of this plugin/etc I use:
 tag(): user.file_manager
 tag(): user.git
+
