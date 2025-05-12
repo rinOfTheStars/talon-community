@@ -7,7 +7,7 @@ settings():
     # speech.timeout = 0.3
 
     # Uncomment to enable dark mode for talon help menus
-    # imgui.dark_mode = true
+    imgui.dark_mode = true
 
     # If `true`, automatically show the picker GUI when the file manager has focus
     user.file_manager_auto_show_pickers = false
@@ -86,7 +86,7 @@ settings():
     # (capitalize, space) dictation-mode speech by selecting & copying surrounding text
     # before inserting. This can be slow and may not work in some applications. You may
     # wish to enable this on a per-application basis.
-    # user.context_sensitive_dictation = true
+    user.context_sensitive_dictation = true
 
     # Choose how to resize windows moved across physical screens (eg. via `snap next`).
     # Default is 'proportional', which preserves window size : screen size ratio.
@@ -95,7 +95,7 @@ settings():
     # user.window_snap_screen = "size aware"
 
     # Puts Talon into sleep mode if no commands are spoken for a defined period of time.
-    # user.listening_timeout_minutes = 3
+    user.listening_timeout_minutes = 3
 
     # Time in seconds to wait for the clipboard to change when trying to get selected text
     # user.selected_text_timeout = 0.25
@@ -123,3 +123,8 @@ settings():
 # Uncomment the below to enable the experimental window layout commands
 # defined in window_layout.talon
 # tag(): user.experimental_window_layout
+
+# Tags related to other plugins/features of this plugin/etc I use:
+tag(): user.file_manager
+tag(): user.git
+
