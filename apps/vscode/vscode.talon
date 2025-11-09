@@ -17,14 +17,14 @@ go view [<user.text>]:
     insert(user.text or "")
 
 # Sidebar
-bar explore: user.vscode("workbench.view.explorer")
-bar extensions: user.vscode("workbench.view.extensions")
-bar outline: user.vscode("outline.focus")
-bar run: user.vscode("workbench.view.debug")
-bar search: user.vscode("workbench.view.search")
-bar source: user.vscode("workbench.view.scm")
-bar test: user.vscode("workbench.view.testing.focus")
-bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
+sidebar explore: user.vscode("workbench.view.explorer")
+sidebar extensions: user.vscode("workbench.view.extensions")
+sidebar outline: user.vscode("outline.focus")
+sidebar run: user.vscode("workbench.view.debug")
+sidebar search: user.vscode("workbench.view.search")
+sidebar source: user.vscode("workbench.view.scm")
+sidebar test: user.vscode("workbench.view.testing.focus")
+sidebar switch: user.vscode("workbench.action.toggleSidebarVisibility")
 
 # Symbol search
 symbol hunt [<user.text>]:
