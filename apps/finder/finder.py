@@ -9,6 +9,7 @@ app: finder
 directories_to_remap = {"": "/Volumes"}
 directories_to_exclude = {}
 
+
 @ctx.action_class("user")
 class UserActions:
     def file_manager_open_parent():

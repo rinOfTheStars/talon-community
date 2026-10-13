@@ -149,4 +149,3 @@ settings():
 # Tags related to other plugins/features of this plugin/etc I use:
 tag(): user.file_manager
 tag(): user.git
-
