@@ -1,0 +1,26 @@
+list: user.code_keyword
+language: swift
+-
+
+# Many of these are also implemented as snippets!
+struct: "struct "
+class: "class "
+actor: "actor "
+protocol: "protocol "
+enum: "enum "
+enumeration: "enum "
+extension: "extension "
+var: "var "
+let: "let "
+in out: " inout "
+get: " get "
+get set: " get set "
+weak: "weak "
+unowned: "unowned "
+lazy: "lazy "
+subscript: "subscript "
+init: "init"
+funk: "func"
+de init: "deinit"
+defer: "defer "
+guard: "guard "

@@ -2,26 +2,24 @@ from talon import Context, Module
 
 mod = Module()
 
-
-@mod.action_class
-class Actions:
-    def code_state_protocol():
-        """Inserts a protocol block, and positions the cursor accordingly"""
-
-    def code_state_extension():
-        """Inserts a type extension block, and positions the cursor accordingly"""
-
-    def code_state_actor():
-        """Inserts an actor block, and positions the cursor accordingly"""
-
-    def code_state_repeat_while():
-        """Inserts a repeat while loop, the Swift equivalent of a do while loop, and positions the cursor accordingly"""
-
-
 ctx = Context()
 ctx.matches = r"""
 code.language: swift
 """
+
+# Action class #
+
+
+@mod.action_class
+class Actions:
+    def call_common_snippets():
+        """todo"""
+
+
+# Lists and Captures #
+
+
+# Types
 
 number_types = {
     "int": "Int",
@@ -56,10 +54,9 @@ other_common_types = {
     "character": "Character",
 }
 
-standard_dictionary_types = {
+common_standard_dictionary_types = {
     **number_types,
     **other_common_types,
 }
 
-# tag: functions
-ctx.lists["user.code_type"] = standard_dictionary_types
+ctx.lists["user.code_type"] = common_standard_dictionary_types
