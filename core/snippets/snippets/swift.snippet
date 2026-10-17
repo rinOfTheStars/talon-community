@@ -12,27 +12,6 @@ $0.wrapperScope: identifier
 let $0
 ---
 
-name: varStatement
-phrase: var
-insertionScope: statement
-
-$0.insertionFormatter: PRIVATE_CAMEL_CASE
-$0.wrapperPhrase: var
-$0.wrapperScope: identifier
--
-var $0
----
-
-name: tryBasic
-phrase: try
-insertionScope: statement
-
-$0.wrapperPhrase: try
-$0.wrapperScope: identifier
--
-try $0
----
-
 name: tryQuestion
 phrase: try question
 insertionScope: statement
@@ -53,36 +32,6 @@ $0.wrapperScope: identifier
 try! $0
 ---
 
-name: letTryBasic
-phrase: let try
-insertionScope: statement
-
-$0.wrapperPhrase: let try
-$0.wrapperScope: identifier
--
-let try $0
----
-
-name: letTryQuestion
-phrase: let try question
-insertionScope: statement
-
-$0.wrapperPhrase: let try question
-$0.wrapperScope: identifier
--
-let try? $0
----
-
-name: letTryForced
-phrase: let try bang | let try exclamation mark
-insertionScope: statement
-
-$0.wrapperPhrase: let try bang | let try exclamation mark
-$0.wrapperScope: identifier
--
-let try! $0
----
-
 name: deferBlock
 phrase: defer
 insertionScope: statement
@@ -93,17 +42,6 @@ $0.wrapperScope: statement
 defer {
     $0
 }
----
-
-name: upcast
-phrase: as | as upcast
-insertionScope: statement
-
-$0.insertionFormatter: PRIVATE_CAMEL_CASE
-$0.wrapperPhrase: as | as upcast
-$0.wrapperScope: identifier
--
-$0 as $1
 ---
 
 name: downcastOptional

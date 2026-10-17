@@ -80,12 +80,12 @@ other_common_types = {
     "character": "Character",
 }
 
-common_standard_dictionary_types = {
+common_types = {
     **number_types,
     **other_common_types,
 }
 
-ctx.lists["user.code_type"] = common_standard_dictionary_types
+ctx.lists["user.code_type"] = common_types
 
 # Operators
 operators = Operators(
@@ -185,5 +185,5 @@ class UserActions:
 
     # Swift-specific grammar
 
-    def code_insert_macro(text: str):
-        """Inserts the selected macro statement at the current cursor location"""
+    # def code_insert_macro(text: str):
+    #    """Inserts the selected macro statement at the current cursor location"""
