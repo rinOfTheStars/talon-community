@@ -18,4 +18,6 @@ tag(): user.code_operators_array
 tag(): user.code_operators_assignment
 tag(): user.code_operators_bitwise
 
+tag(): user.code_macro_like
+
 ## Protocols

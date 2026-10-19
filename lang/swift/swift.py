@@ -12,8 +12,6 @@ code.language: swift
 
 # Lists and Captures #
 
-mod.list("code_macros", desc="List of active macros for the active language")
-
 # Macros
 
 standard_library_macros = {
@@ -44,6 +42,8 @@ standard_library_macros = {
     "dee ess oh handle": "#dsohandle",
     "isolation": "#isolation",
 }
+
+ctx.lists["user.code_basic_macro_likes"] = standard_library_macros # TODO: separate these out properly
 
 # Types
 
@@ -137,9 +137,7 @@ operators = Operators(
 
 @mod.action_class
 class Actions:
-    def code_insert_macro(text: str):
-        """Inserts the selected macro statement at the current cursor location"""
-
+    
     def code_define_protocol():
         """Start a protocol definition (Swift's approximate equivalent to Java interfaces/Rust traits)"""
 
@@ -182,8 +180,3 @@ class UserActions:
     # tag: user.code_functions
     # tag: user.code_functions_common
     # tag: user.code_libraries
-
-    # Swift-specific grammar
-
-    # def code_insert_macro(text: str):
-    #    """Inserts the selected macro statement at the current cursor location"""
