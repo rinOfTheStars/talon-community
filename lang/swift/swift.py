@@ -43,7 +43,9 @@ standard_library_macros = {
     "isolation": "#isolation",
 }
 
-ctx.lists["user.code_basic_macro_likes"] = standard_library_macros # TODO: separate these out properly
+ctx.lists["user.code_basic_macro_like"] = (
+    standard_library_macros  # TODO: separate these out properly
+)
 
 # Types
 
@@ -137,7 +139,6 @@ operators = Operators(
 
 @mod.action_class
 class Actions:
-    
     def code_define_protocol():
         """Start a protocol definition (Swift's approximate equivalent to Java interfaces/Rust traits)"""
 

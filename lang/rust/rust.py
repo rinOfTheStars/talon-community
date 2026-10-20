@@ -29,6 +29,17 @@ class Actions:
     def code_comment_documentation_block_inner():
         """Inserts an inner block document comment and positions the cursor appropriately"""
 
+    # DEPRECATED
+
+    def code_insert_macro(text: str, selection: str):
+        """DEPRECATED: Inserts a macro and positions the cursor appropriately"""
+
+    def code_insert_macro_array(text: str, selection: str):
+        """DEPRECATED: Inserts a macro array and positions the cursor appropriately"""
+
+    def code_insert_macro_block(text: str, selection: str):
+        """DEPRECATED: Inserts a macro block and positions the cursor appropriately"""
+
 
 ctx = Context()
 ctx.matches = r"""
@@ -140,9 +151,9 @@ all_block_macros = {
     **standard_block_macros,
 }
 
-ctx.lists["user.code_function_macro_likes"] = all_function_macros
-ctx.lists["user.code_array_macro_likes"] = all_array_macros
-ctx.lists["user.code_block_macro_likes"] = all_block_macros
+ctx.lists["user.code_function_macro_like"] = all_function_macros
+ctx.lists["user.code_array_macro_like"] = all_array_macros
+ctx.lists["user.code_block_macro_like"] = all_block_macros
 
 all_macros = {
     **all_function_macros,
@@ -150,10 +161,10 @@ all_macros = {
     **all_block_macros,
 }
 
-# These can probably be removed as long as no external userscripts are relying on them!
-all_function_macro_values = set(all_function_macros.values())
-all_array_macro_values = set(all_array_macros.values())
-all_block_macro_values = set(all_block_macros.values())
+# DEPRECATED: Derive this yourself from the lists in macro_like.py
+# all_function_macro_values = set(all_function_macros.values())
+# all_array_macro_values = set(all_array_macros.values())
+# all_block_macro_values = set(all_block_macros.values())
 
 closure_traits = {
     "closure": "Fn",
@@ -363,6 +374,13 @@ class UserActions:
     def code_comment_documentation_block_inner():
         actions.user.insert_between("/*!", "*/")
         actions.key("enter")
+
+    # DEPRECATED
+    def code_insert_macro(text: str, selection: str):
+        actions.user.deprecate_action(
+            "2026-10-19", "user.code_insert_macro", "user.code_insert_macro_like"
+        )
+        actions.user.code_insert_macro_like(text, selection)
 
 
 RT = TypeVar("RT")  # return type
