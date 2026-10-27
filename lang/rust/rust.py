@@ -1,6 +1,3 @@
-from collections.abc import Callable
-from typing import Any, TypeVar
-
 from talon import Context, Module, actions, settings
 
 from ...core.described_functions import create_described_insert_between
@@ -320,11 +317,3 @@ class UserActions:
             "2026-10-19", "user.code_insert_macro", "user.code_insert_macro_like"
         )
         actions.user.code_insert_macro_like(text, selection)
-
-
-RT = TypeVar("RT")  # return type
-
-
-def repeat_call(n: int, f: Callable[..., RT], *args: Any, **kwargs: Any):
-    for _ in range(n):
-        f(*args, **kwargs)
